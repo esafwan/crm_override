@@ -1,33 +1,55 @@
-### Crm Override
+# Frappe CRM Override Example
 
-Override CRM app.
+This repository provides an example workflow on how to override components in a Frappe UI-based applications. The example demonstrates how to add a new page with a YouTube video embed and integrate it into the sidebar of Frappe CRM from a custom app.
+
+## Features
+
+- Demonstrates how to override Frappe UI components from custom app.
+- Modifies the Frappe CRM sidebar to include a link to the custom page.
+
+## Getting Started
+
+### Prerequisites
+
+- Frappe Bench with Frappe CRM Installed
 
 ### Installation
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
+1. **Get the app code:**
 
-```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app crm_override
-```
+   > If developing, clone the repository into app directory of your bench.
+   
+   ```bash
+   git clone https://github.com/your-username/crm_override.git
+   cd crm_override
+   ```
 
-### Contributing
+   > To Try, get-app with bench cli.
+   ```bash
+   bench get-app https://github.com/esafwan/crm_override.git
+   bench --site your-site-name install-app crm_override
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
 
-```bash
-cd apps/crm_override
-pre-commit install
-```
+3. **Install dependencies:**
+   ```
+   cd frontend
+   yarn
+   yarn build
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
+   ```
 
-- ruff
-- eslint
-- prettier
-- pyupgrade
+5. **Run the app:**
+   ```
+   bench start
+   ```
 
-### License
+## File Structure
 
-mit
+- \`src_overrides/\` - Contains overridden Vue components.
+- \`vite.config.js\` - Vite configuration for building the frontend assets.
+- \`package.json\` - package.json configuration calls the build script and do the overrides. 
+
+## How it Works
+
+- The \`src_overrides\` in the frontend folder contains the overridden sidebar and new custom page.
+- The  \`custom-build.js` in the frontend folder does the overrides at build. 
