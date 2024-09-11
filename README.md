@@ -2,6 +2,8 @@
 
 This repository provides an example workflow on how to override components in a Frappe UI-based applications. The example demonstrates how to add a new page with a YouTube video embed and integrate it into the sidebar of Frappe CRM from a custom app.
 
+See the video here: https://www.youtube.com/watch?v=OKrGJa2NnIs
+
 ## Features
 
 - Demonstrates how to override Frappe UI components from custom app.
